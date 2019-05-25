@@ -56,9 +56,9 @@ namespace OpMon {
             osslog << "Date in seconds : " << time(NULL);
             oplog(osslog.str());
 #ifdef _WIN32
-            oplog("Plateform : Windows");
+            oplog("Platform : Windows");
 #else
-            oplog("Plateform : Unix");
+            oplog("Platform : Unix");
 #endif
             oplog("Loading internal files.");
             InternalFiles::registerFiles();
@@ -86,7 +86,7 @@ namespace OpMon {
                 oplog("Starting game loop");
 
                 GameLoop gameloop;
-                gameloop();
+                gameloop.runLoop();
 
                 std::string logEntry;
                 logEntry << std::string("Game ended after ") << Utils::Time::getElapsedSeconds() << std::string("seconds");
