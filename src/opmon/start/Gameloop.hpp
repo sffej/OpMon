@@ -29,7 +29,7 @@ namespace OpMon {
          * Returns GameStatus::STOP if escape is pressed or if the game is closed.
          * Returns GameStatus::CONTINUE if the game must continue.
          */
-        GameStatus CheckforClose(sf::Event &event);
+        GameStatus checkForClose(sf::Event &event);
 
         std::unique_ptr<Model::UiData> uidata;
         std::stack<std::unique_ptr<Controller::AGameScreen>> _gameScreens;

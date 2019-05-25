@@ -62,7 +62,7 @@ namespace OpMon {
 
                 if(isEvent == false)
                     event.type = sf::Event::SensorChanged;
-                status = CheckforClose(event);
+                status = checkForClose(event);
                 if(status == GameStatus::STOP)
                     break;
                 status = ctrl->checkEvent(event);
@@ -114,7 +114,7 @@ namespace OpMon {
         return GameStatus::STOP;
     }
 
-    GameStatus GameLoop::CheckforClose(sf::Event &event) {
+    GameStatus GameLoop::checkForClose(sf::Event &event) {
         //process all pending SFML events
         if(event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {;
             return GameStatus::STOP;
